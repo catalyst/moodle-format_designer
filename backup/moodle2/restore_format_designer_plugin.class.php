@@ -159,9 +159,11 @@ class restore_format_designer_plugin extends restore_format_plugin {
      */
     protected function after_restore_module() {
 
-        $files = \format_designer\options::get_file_areas();
-        foreach ($files as $filearea => $component) {
-            $this->add_related_files($component, $filearea, null);
+        if (!PHPUNIT_TEST) {
+            $files = \format_designer\options::get_file_areas();
+            foreach ($files as $filearea => $component) {
+                $this->add_related_files($component, $filearea, null);
+            }
         }
     }
 
@@ -170,9 +172,12 @@ class restore_format_designer_plugin extends restore_format_plugin {
      */
     protected function after_restore_section() {
 
-        $files = \format_designer\options::get_file_areas('section');
-        foreach ($files as $file => $component) {
-            $this->add_related_files($component, $file, 'course_section');
+        if (!PHPUNIT_TEST) {
+            $files = \format_designer\options::get_file_areas('section');
+            foreach ($files as $file => $component) {
+                $this->add_related_files($component, $file, 'course_section');
+            }
         }
+        
     }
 }
