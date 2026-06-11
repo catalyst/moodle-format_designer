@@ -1309,7 +1309,6 @@ span.section-collapse-icon:before {
     border: 0;
     display: flex;
     position: relative;
-    z-index: 0;
 }
 .format-designer.editing .designer .section .content .section li.activity .activity-block.designer:hover {
     background: none;
@@ -1409,7 +1408,7 @@ span.section-collapse-icon:before {
     width: auto;
     padding: 0;
 }
-.format-designer .designer .section .content .section li.activity.label .activityinstance {
+.format-designer .designer .section .content .section:not(.circles-layout) li.activity.label .activityinstance {
     display: none;
 }
 .format-designer .designer .section .content .section li.activity.label .activity-block.designer .contentwithoutlink {
