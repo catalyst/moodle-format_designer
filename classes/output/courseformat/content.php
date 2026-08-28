@@ -63,7 +63,7 @@ class content extends content_base {
             'initialsection' => $initialsection,
             'sections' => $sections,
             'format' => $format->get_format(),
-            'sectionreturn' => null,
+            'sectionreturn' => 'null',
         ];
 
         $singlesectionnum = $format->get_sectionnum();
